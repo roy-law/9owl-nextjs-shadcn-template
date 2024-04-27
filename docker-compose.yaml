@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  9owl-ez-express-client:
+    image: postgres:latest
+    restart: always
+    container_name: 9owl-ez-express-client
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_PASSWORD: example
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+volumes:
+  postgres:
